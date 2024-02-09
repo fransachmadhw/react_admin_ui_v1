@@ -18,6 +18,8 @@ import Notes from './pages/Notes';
 import Calendar from './pages/Calendar';
 import Charts from './pages/Charts';
 import Logs from './pages/Logs';
+import ToasterProvider from './components/ToasterProvider';
+import Settings from './pages/Settings';
 
 function App() {
   const Layout = () => {
@@ -26,6 +28,7 @@ function App() {
         id="rootContainer"
         className="w-full p-0 m-0 overflow-visible"
       >
+        <ToasterProvider />
         <Navbar />
         <div className="w-full flex gap-0 xl:mt-[86px]">
           <div className="xl:w-[250px] border-r px-3 py-5">
@@ -84,6 +87,10 @@ function App() {
         {
           path: '/logs',
           element: <Logs />,
+        },
+        {
+          path: '/settings',
+          element: <Settings />,
         },
       ],
       errorElement: <Error />,

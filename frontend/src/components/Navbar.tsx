@@ -4,6 +4,7 @@ import { DiReact } from 'react-icons/di';
 import { HiSearch, HiOutlineBell } from 'react-icons/hi';
 import { RxEnterFullScreen, RxExitFullScreen } from 'react-icons/rx';
 import { IoSettingsOutline } from 'react-icons/io5';
+import ChangeThemes from './ChangesThemes';
 
 const Navbar = () => {
   const [isFullScreen, setIsFullScreen] = React.useState(true);
@@ -55,9 +56,39 @@ const Navbar = () => {
           </div>
           <span className="m-0 p-0 xl:text-[14px]">Frans</span>
         </Link>
-        <button className="btn btn-circle btn-ghost">
+        {/* <button className="btn btn-circle btn-ghost">
           <IoSettingsOutline className="xl:text-xl" />
-        </button>
+        </button> */}
+        <div className="drawer drawer-end">
+          <input
+            id="my-drawer-4"
+            type="checkbox"
+            className="drawer-toggle"
+          />
+          <div className="drawer-content">
+            {/* Page content here */}
+            <label
+              htmlFor="my-drawer-4"
+              className="drawer-button btn btn-circle btn-ghost"
+            >
+              <IoSettingsOutline className="xl:text-xl" />
+            </label>
+          </div>
+          <div className="drawer-side overflow-x-hidden">
+            <label
+              htmlFor="my-drawer-4"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <div className="menu p-4 xl:w-[25%] min-h-full bg-base-100 text-base-content flex flex-col items-stretch gap-5">
+              {/* Sidebar content here */}
+              <div className="flex flex-col gap-3 items-start">
+                <span>Change Theme</span>
+                <ChangeThemes />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

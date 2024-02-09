@@ -9,7 +9,7 @@ import Login from './pages/Login';
 import Products from './pages/Products';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Menu from './components/Menu';
+import Menu from './components/menu/Menu';
 import Error from './pages/Error';
 import Profile from './pages/Profile';
 import Orders from './pages/Orders';

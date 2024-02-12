@@ -23,10 +23,10 @@ const Navbar = () => {
   }, [element, isFullScreen]);
 
   return (
-    <div className="fixed z-[3] top-0 left-0 right-0 bg-base-100 w-full flex justify-between px-3 py-5">
+    <div className="fixed z-[3] top-0 left-0 right-0 bg-base-100 w-full flex justify-between xl:pl-3 py-5">
       <Link to={'/'} className="flex items-center gap-2">
-        <DiReact className="xl:text-4xl text-primary animate-spin-slow" />
-        <span className="font-semibold text-base-content dark:text-neutral-200">
+        <DiReact className="xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow" />
+        <span className="xl:text-xl 2xl:text-2xl font-semibold text-base-content dark:text-neutral-200">
           React Dashboard
         </span>
       </Link>
@@ -72,7 +72,10 @@ const Navbar = () => {
         >
           <div className="avatar">
             <div className="w-8 rounded-full">
-              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img
+                src="https://avatars.githubusercontent.com/u/74099030?v=4"
+                alt="foto-cowok-ganteng"
+              />
             </div>
           </div>
           <span className="m-0 p-0 xl:text-[14px]">Frans</span>

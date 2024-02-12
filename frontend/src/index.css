@@ -34,3 +34,8 @@
     height: auto !important;
     overflow: auto !important;
 }
+
+/* Home */
+.home .box {
+    @apply xl:rounded-2xl overflow-hidden border-2 border-base-300 dark:border-slate-700 xl:p-4 2xl:p-6
+}

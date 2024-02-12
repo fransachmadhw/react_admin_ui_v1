@@ -26,16 +26,18 @@ function App() {
     return (
       <div
         id="rootContainer"
-        className="w-full p-0 m-0 overflow-visible"
+        className="w-full p-0 m-0 overflow-visible 2xl:min-h-screen 2xl:flex flex-col justify-between"
       >
         <ToasterProvider />
-        <Navbar />
-        <div className="w-full flex gap-0 xl:mt-[86px]">
-          <div className="xl:w-[250px] border-r px-3 py-5">
-            <Menu />
-          </div>
-          <div className="w-full px-3 py-5">
-            <Outlet />
+        <div>
+          <Navbar />
+          <div className="w-full flex gap-0 xl:pt-[86px] 2xl:pt-[112px] mb-auto">
+            <div className="xl:w-[250px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:py-1">
+              <Menu />
+            </div>
+            <div className="w-full px-3 xl:py-2">
+              <Outlet />
+            </div>
           </div>
         </div>
         <Footer />

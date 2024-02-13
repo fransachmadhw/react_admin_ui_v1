@@ -32,10 +32,10 @@ function App() {
         <div>
           <Navbar />
           <div className="w-full flex gap-0 pt-20 xl:pt-[86px] 2xl:pt-[112px] mb-auto">
-            <div className="xl:w-[250px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:py-1">
+            <div className="hidden xl:block xl:w-[250px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:py-1">
               <Menu />
             </div>
-            <div className="w-full px-3 xl:py-2">
+            <div className="w-full px-4 xl:px-3 xl:py-2">
               <Outlet />
             </div>
           </div>

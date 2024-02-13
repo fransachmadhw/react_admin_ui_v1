@@ -34,7 +34,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
               }
             >
               <listItem.icon className="xl:text-2xl" />
-              <span className="hidden xl:block xl:text-sm capitalize">
+              <span className="xl:text-sm capitalize">
                 {listItem.label}
               </span>
             </NavLink>
@@ -46,7 +46,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
               className="btn btn-ghost btn-block justify-start"
             >
               <listItem.icon className="xl:text-2xl" />
-              <span className="hidden xl:block xl:text-sm capitalize">
+              <span className="xl:text-sm capitalize">
                 {listItem.label}
               </span>
             </button>

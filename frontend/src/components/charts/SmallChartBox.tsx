@@ -72,7 +72,7 @@ const SmallChartBox: React.FC<SmallChartBoxProps> = ({
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="flex xl:flex-col 2xl:flex-row gap-0 xl:items-end">
+        <div className="flex xl:flex-col 2xl:flex-row gap-2 xl:gap-0 xl:items-end">
           <span
             className={`${
               percentage > 0 ? 'text-success' : 'text-error'

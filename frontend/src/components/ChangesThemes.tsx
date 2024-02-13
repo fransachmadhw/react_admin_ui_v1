@@ -20,7 +20,7 @@ const ChangeThemes = () => {
           className="theme-controller"
         />
         <svg
-          className="swap-off fill-current w-5 h-5"
+          className="swap-off fill-current w-6 h-6 xl:w-5 xl:h-5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -28,7 +28,7 @@ const ChangeThemes = () => {
         </svg>
 
         <svg
-          className="swap-on fill-current w-5 h-5"
+          className="swap-on fill-current w-6 h-6 xl:w-5 xl:h-5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

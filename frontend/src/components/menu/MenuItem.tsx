@@ -19,7 +19,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
 }) => {
   return (
     <div className="w-full flex flex-col items-stretch gap-2">
-      <span className="px-2 xl:text-sm uppercase">{catalog}</span>
+      <span className="hidden xl:block px-2 xl:text-sm uppercase">
+        {catalog}
+      </span>
       {listItems.map((listItem) => {
         if (listItem.isLink) {
           return (
@@ -32,7 +34,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
               }
             >
               <listItem.icon className="xl:text-2xl" />
-              <span className="xl:text-sm capitalize">
+              <span className="hidden xl:block xl:text-sm capitalize">
                 {listItem.label}
               </span>
             </NavLink>
@@ -44,7 +46,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
               className="btn btn-ghost btn-block justify-start"
             >
               <listItem.icon className="xl:text-2xl" />
-              <span className="xl:text-sm capitalize">
+              <span className="hidden xl:block xl:text-sm capitalize">
                 {listItem.label}
               </span>
             </button>

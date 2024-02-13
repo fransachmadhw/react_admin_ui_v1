@@ -23,14 +23,14 @@ const Navbar = () => {
   }, [element, isFullScreen]);
 
   return (
-    <div className="fixed z-[3] top-0 left-0 right-0 bg-base-100 w-full flex justify-between xl:pl-3 py-5">
+    <div className="fixed z-[3] top-0 left-0 right-0 bg-base-100 w-full flex justify-between pl-3 xl:pl-3 pr-3 xl:pr-0 py-3 xl:py-5">
       <Link to={'/'} className="flex items-center gap-2">
-        <DiReact className="xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow" />
-        <span className="xl:text-xl 2xl:text-2xl font-semibold text-base-content dark:text-neutral-200">
+        <DiReact className="text-5xl xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow" />
+        <span className="text-xl xl:text-xl 2xl:text-2xl font-semibold text-base-content dark:text-neutral-200">
           React Dashboard
         </span>
       </Link>
-      <div className="flex items-center pr-3">
+      <div className="xl:flex items-center pr-3 hidden">
         <button
           onClick={() =>
             toast('Gaboleh!', {

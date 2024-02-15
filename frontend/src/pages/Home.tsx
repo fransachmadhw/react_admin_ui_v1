@@ -1,11 +1,15 @@
 // import React from 'react';
 import TopDealsBox from '../components/topDealsBox/TopDealsBox';
-import SmallChartBox from '../components/charts/SmallChartBox';
+import ChartBox from '../components/charts/ChartBox';
 import {
   totalUsers,
   totalProducts,
   totalRatio,
   totalRevenue,
+  totalVisit,
+  totalProfit,
+  totalSource,
+  totalRevenueByProducts,
 } from '../components/charts/data';
 
 const Home = () => {
@@ -16,25 +20,29 @@ const Home = () => {
           <TopDealsBox />
         </div>
         <div className="box col-span-full xl:col-span-1">
-          <SmallChartBox {...totalUsers} />
+          <ChartBox chartType={'line'} {...totalUsers} />
         </div>
         <div className="box col-span-full xl:col-span-1">
-          <SmallChartBox {...totalProducts} />
+          <ChartBox chartType={'line'} {...totalProducts} />
         </div>
         <div className="box row-span-3 col-span-full xl:col-span-1">
-          4
+          <ChartBox chartType={'pie'} {...totalSource} />
         </div>
         <div className="box col-span-full xl:col-span-1">
-          <SmallChartBox {...totalRatio} />
+          <ChartBox chartType={'line'} {...totalRatio} />
         </div>
         <div className="box col-span-full xl:col-span-1">
-          <SmallChartBox {...totalRevenue} />
+          <ChartBox chartType={'line'} {...totalRevenue} />
         </div>
         <div className="box row-span-2 col-span-full xl:col-span-2">
-          7
+          <ChartBox chartType={'area'} {...totalRevenueByProducts} />
         </div>
-        <div className="box col-span-full xl:col-span-1">8</div>
-        <div className="box col-span-full xl:col-span-1">9</div>
+        <div className="box col-span-full xl:col-span-1">
+          <ChartBox chartType={'bar'} {...totalVisit} />
+        </div>
+        <div className="box col-span-full xl:col-span-1">
+          <ChartBox chartType={'bar'} {...totalProfit} />
+        </div>
       </div>
     </div>
   );

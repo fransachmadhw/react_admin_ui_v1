@@ -69,9 +69,8 @@ const Navbar = () => {
       <div className="flex items-center xl:pr-3 gap-0">
         <button
           onClick={() =>
-            toast('Gaboleh!', {
+            toast('Gaboleh cari!', {
               icon: '😠',
-              id: 'toastNavbar',
             })
           }
           className="hidden xl:inline-flex btn btn-circle btn-ghost"
@@ -90,9 +89,8 @@ const Navbar = () => {
         </button>
         <button
           onClick={() =>
-            toast('Gaboleh!', {
+            toast('Gaada notif!', {
               icon: '😠',
-              id: 'toastNavbar',
             })
           }
           className="px-0 xl:px-auto btn btn-circle btn-ghost"

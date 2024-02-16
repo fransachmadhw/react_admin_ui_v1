@@ -60,13 +60,13 @@ const ChartBox: React.FC<ChartBoxProps> = ({
         <div className="flex h-full flex-col justify-between items-start">
           <div className="flex items-center gap-2">
             {IconBox && (
-              <IconBox className="m-0 p-0 xl:text-[30px] 2xl:text-[42px] leading-none" />
+              <IconBox className="m-0 p-0 text-[24px] xl:text-[30px] 2xl:text-[42px] leading-none" />
             )}
-            <span className="xl:w-[60px] 2xl:w-[82px] m-0 p-0 xl:text-[15px] 2xl:text-[20px] leading-none 2xl:leading-tight font-semibold">
+            <span className="w-[88px] xl:w-[60px] 2xl:w-[82px] m-0 p-0 text-[16px] xl:text-[15px] 2xl:text-[20px] leading-[1.15] 2xl:leading-tight font-semibold">
               {title}
             </span>
           </div>
-          <span className="font-bold xl:text-2xl 2xl:text-3xl m-0 p-0">
+          <span className="font-bold text-xl xl:text-2xl 2xl:text-3xl m-0 p-0">
             {number}
           </span>
           <button
@@ -106,13 +106,13 @@ const ChartBox: React.FC<ChartBoxProps> = ({
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <div className="flex xl:flex-col 2xl:flex-row gap-2 xl:gap-2 xl:items-end 2xl:items-center">
+          <div className="flex xl:flex-col 2xl:flex-row gap-2 xl:gap-2 items-end xl:items-end 2xl:items-center">
             <span
               className={`${
                 percentage && percentage > 0
                   ? 'text-success'
                   : 'text-error'
-              } xl:text-xl 2xl:text-3xl font-bold`}
+              } text-2xl xl:text-xl 2xl:text-3xl font-bold`}
             >
               {percentage || ''}%
             </span>

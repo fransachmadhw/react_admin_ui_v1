@@ -35,7 +35,7 @@ function App() {
             <div className="hidden xl:block xl:w-[250px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:py-1">
               <Menu />
             </div>
-            <div className="w-full px-4 xl:px-3 xl:py-2">
+            <div className="w-full px-4 xl:px-3 xl:py-2 overflow-clip">
               <Outlet />
             </div>
           </div>

@@ -39,3 +39,39 @@
 .home .box {
     @apply rounded-lg xl:rounded-2xl overflow-visible border-2 border-base-300 dark:border-slate-700 p-4 xl:p-4 2xl:p-6
 }
+
+.dataGrid span, .dataGrid svg, .dataGrid button {
+    @apply text-base-content
+}
+
+.dataGrid .MuiDataGrid-columnHeaders {
+    @apply text-base-content border-base-content
+}
+
+.dataGrid .MuiDataGrid-virtualScroller {
+    @apply text-base-content border-base-content
+}
+
+.dataGrid .MuiDataGrid-row .MuiDataGrid-cell .MuiSvgIcon-root {
+    @apply text-base-content
+}
+
+.dataGrid .MuiDataGrid-footerContainer {
+    @apply text-base-content border-base-content
+}
+
+.dataGrid .MuiDataGrid-footerContainer p {
+    @apply text-base-content border-base-content
+}
+
+.dataGrid .MuiDataGrid-toolbarContainer {
+    @apply flex-row-reverse
+}
+
+.dataGrid .MuiDataGrid-toolbarContainer input {
+    @apply border-base-content text-base-content
+}
+
+.dataGrid .MuiDataGrid-toolbarContainer ::placeholder {
+    @apply text-base-content
+}

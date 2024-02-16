@@ -15,7 +15,7 @@ import {
 const Home = () => {
   return (
     <div className="home w-full p-0 m-0">
-      <div className="w-full grid grid-cols-1 xl:grid-cols-4 grid-flow-dense xl:auto-rows-[minmax(150px,auto)] gap-3 xl:gap-3 px-0">
+      <div className="w-full grid grid-cols-1 xl:grid-cols-4 grid-flow-dense auto-rows-[minmax(200px,auto)] xl:auto-rows-[minmax(150px,auto)] gap-3 xl:gap-3 px-0">
         <div className="box col-span-full xl:col-span-1 row-span-3">
           <TopDealsBox />
         </div>

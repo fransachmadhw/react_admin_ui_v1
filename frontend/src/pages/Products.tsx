@@ -1,22 +1,13 @@
 import React from 'react';
-import {
-  // DataGrid,
-  GridColDef,
-  //   GridToolbarQuickFilter,
-  // GridToolbar,
-  // GridValueGetterParams,
-} from '@mui/x-data-grid';
+import { GridColDef } from '@mui/x-data-grid';
 import DataTable from '../components/DataTable';
 import { fetchProducts } from '../api/ApiCollection';
 import { useQuery } from '@tanstack/react-query';
-// import {
-//   HiOutlinePencilSquare,
-//   HiOutlineEye,
-//   HiOutlineTrash,
-// } from 'react-icons/hi2';
 import toast from 'react-hot-toast';
+import AddData from '../components/AddData';
 
 const Products = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const { isLoading, isError, isSuccess, data } = useQuery({
     queryKey: ['allproducts'],
     queryFn: fetchProducts,
@@ -102,6 +93,7 @@ const Products = () => {
             Products
           </h2>
           <button
+            onClick={() => setIsOpen(true)}
             className={`btn ${
               isLoading ? 'btn-disabled' : 'btn-primary'
             }`}
@@ -109,10 +101,26 @@ const Products = () => {
             Add New Product +
           </button>
         </div>
+
         {isLoading ? (
           <DataTable slug="products" columns={columns} rows={[]} />
-        ) : (
+        ) : isSuccess ? (
           <DataTable slug="products" columns={columns} rows={data} />
+        ) : (
+          <>
+            <DataTable slug="products" columns={columns} rows={[]} />
+            <div className="w-full flex justify-center">
+              Error while getting the data!
+            </div>
+          </>
+        )}
+
+        {isOpen && (
+          <AddData
+            slug={'product'}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
         )}
       </div>
     </div>

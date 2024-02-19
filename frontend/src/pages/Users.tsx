@@ -1,22 +1,13 @@
 import React from 'react';
-import {
-  // DataGrid,
-  GridColDef,
-  //   GridToolbarQuickFilter,
-  // GridToolbar,
-  // GridValueGetterParams,
-} from '@mui/x-data-grid';
+import { GridColDef } from '@mui/x-data-grid';
 import DataTable from '../components/DataTable';
 import { fetchUsers } from '../api/ApiCollection';
 import { useQuery } from '@tanstack/react-query';
-// import {
-//   HiOutlinePencilSquare,
-//   HiOutlineEye,
-//   HiOutlineTrash,
-// } from 'react-icons/hi2';
 import toast from 'react-hot-toast';
+import AddData from '../components/AddData';
 
 const Users = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const { isLoading, isError, isSuccess, data } = useQuery({
     queryKey: ['allusers'],
     queryFn: fetchUsers,
@@ -112,6 +103,7 @@ const Users = () => {
             Users
           </h2>
           <button
+            onClick={() => setIsOpen(true)}
             className={`btn ${
               isLoading ? 'btn-disabled' : 'btn-primary'
             }`}
@@ -121,8 +113,23 @@ const Users = () => {
         </div>
         {isLoading ? (
           <DataTable slug="users" columns={columns} rows={[]} />
-        ) : (
+        ) : isSuccess ? (
           <DataTable slug="users" columns={columns} rows={data} />
+        ) : (
+          <>
+            <DataTable slug="users" columns={columns} rows={[]} />
+            <div className="w-full flex justify-center">
+              Error while getting the data!
+            </div>
+          </>
+        )}
+
+        {isOpen && (
+          <AddData
+            slug={'user'}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
         )}
       </div>
     </div>

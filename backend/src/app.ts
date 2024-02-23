@@ -5,9 +5,11 @@ import cors from 'cors';
 
 import * as middlewares from './middlewares';
 import api from './api';
-import MessageResponse from './interfaces/MessageResponse';
+// import MessageResponse from './interfaces/MessageResponse';
 import users from './data/users';
 import products from './data/products';
+import orders from './data/orders';
+import posts from './data/posts';
 import topDeals from './data/topDeals';
 import totalUsers from './data/totalUsers';
 import totalProducts from './data/totalProducts';
@@ -27,10 +29,28 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.get<{}, MessageResponse>('/', (req, res) => {
-  res.json({
-    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-  });
+app.get('/', (req, res) => {
+  const navigationLinks = {
+    route1: '/users',
+    route2: '/users/:id',
+    route3: '/products',
+    route4: '/products/:id',
+    route5: '/orders',
+    route6: '/orders/:id',
+    route8: '/posts',
+    route7: '/posts/:id',
+  };
+
+  let htmlResponse =
+    '<h3>🦄🌈✨ React Dashboard Admin V1 API ✨🌈🦄</h3>';
+  htmlResponse += '<ul>';
+  for (const [route, url] of Object.entries(navigationLinks)) {
+    htmlResponse += `<li><a href="${url}">${route}</a></li>`;
+  }
+  htmlResponse += '</ul>';
+
+  // Send HTML response
+  res.send(htmlResponse);
 });
 
 // GET USERS
@@ -61,6 +81,16 @@ app.get('/products/:id', (req, res) => {
   );
 
   res.json(product);
+});
+
+// GET ORDERS
+app.get('/orders', (req, res) => {
+  res.json(orders);
+});
+
+// GET POSTS
+app.get('/posts', (req, res) => {
+  res.json(posts);
 });
 
 // GET TOP DEAL USERS

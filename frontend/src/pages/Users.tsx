@@ -12,54 +12,52 @@ const Users = () => {
     queryKey: ['allusers'],
     queryFn: fetchUsers,
   });
+
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 90 },
     {
-      field: 'img',
-      headerName: 'Avatar',
-      width: 100,
+      field: 'firstName',
+      headerName: 'Name',
+      minWidth: 220,
+      flex: 1,
       renderCell: (params) => {
         return (
-          <div className="avatar">
-            <div className="w-6 xl:w-8 rounded-full">
-              <img
-                src={params.row.img || '/Portrait_Placeholder.png'}
-                alt="user-picture"
-              />
+          <div className="flex gap-3 items-center">
+            <div className="avatar">
+              <div className="w-6 xl:w-9 rounded-full">
+                <img
+                  src={params.row.img || '/Portrait_Placeholder.png'}
+                  alt="user-picture"
+                />
+              </div>
             </div>
+            <span className="mb-0 pb-0 leading-none">
+              {params.row.firstName} {params.row.lastName}
+            </span>
           </div>
         );
       },
     },
     {
-      field: 'firstName',
-      headerName: 'First name',
-      width: 150,
-      editable: false,
-    },
-    {
-      field: 'lastName',
-      headerName: 'Last name',
-      width: 150,
-      editable: false,
-    },
-    {
       field: 'email',
       type: 'string',
       headerName: 'Email',
-      width: 200,
+      minWidth: 200,
+      flex: 1,
     },
     {
       field: 'phone',
       type: 'string',
       headerName: 'Phone',
-      width: 200,
+      minWidth: 120,
+      flex: 1,
     },
     {
       field: 'createdAt',
       headerName: 'Created At',
-      width: 200,
+      minWidth: 100,
       type: 'string',
+      flex: 1,
     },
     // {
     //   field: 'fullName',
@@ -74,8 +72,9 @@ const Users = () => {
     {
       field: 'verified',
       headerName: 'Verified',
-      width: 150,
+      width: 80,
       type: 'boolean',
+      flex: 1,
     },
   ];
 
@@ -98,10 +97,17 @@ const Users = () => {
   return (
     <div className="w-full p-0 m-0">
       <div className="w-full flex flex-col items-stretch gap-3">
-        <div className="w-full flex justify-between">
-          <h2 className="font-bold text-2xl xl:text-4xl mt-0 pt-0 text-base-content dark:text-neutral-200">
-            Users
-          </h2>
+        <div className="w-full flex justify-between mb-5">
+          <div className="flex gap-1 justify-start flex-col items-start">
+            <h2 className="font-bold text-2xl xl:text-4xl mt-0 pt-0 text-base-content dark:text-neutral-200">
+              Users
+            </h2>
+            {data && data.length > 0 && (
+              <span className="text-neutral dark:text-neutral-content font-medium text-base">
+                {data.length} Users Found
+              </span>
+            )}
+          </div>
           <button
             onClick={() => setIsOpen(true)}
             className={`btn ${

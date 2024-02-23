@@ -177,3 +177,35 @@ export const fetchProducts = async () => {
 
   return response;
 };
+
+// GET ALL ORDERS
+export const fetchOrders = async () => {
+  const response = await axios
+    .get('https://react-admin-ui-v1-api.vercel.app/orders')
+    .then((res) => {
+      console.log('axios get:', res.data);
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+
+  return response;
+};
+
+// GET ALL POSTS
+export const fetchPosts = async () => {
+  const response = await axios
+    .get('https://react-admin-ui-v1-api.vercel.app/posts')
+    .then((res) => {
+      console.log('axios get:', res.data);
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+
+  return response;
+};

@@ -30,10 +30,11 @@ const DataTable: React.FC<DataTableProps> = ({
   const actionColumn: GridColDef = {
     field: 'action',
     headerName: 'Action',
-    width: 200,
+    minWidth: 200,
+    flex: 1,
     renderCell: (params) => {
       return (
-        <div className="action">
+        <div className="flex items-center">
           {/* <div to={`/${props.slug}/${params.row.id}`}> */}
           <button
             onClick={() => {
@@ -74,6 +75,7 @@ const DataTable: React.FC<DataTableProps> = ({
         className="dataGrid p-0 xl:p-3 w-full bg-base-100 text-white"
         rows={rows}
         columns={[...columns, actionColumn]}
+        getRowHeight={() => 'auto'}
         initialState={{
           pagination: {
             paginationModel: {

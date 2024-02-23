@@ -12,60 +12,71 @@ const Products = () => {
     queryKey: ['allproducts'],
     queryFn: fetchProducts,
   });
+
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 90 },
     {
       field: 'img',
-      headerName: 'Image',
-      width: 100,
+      headerName: 'Product',
+      minWidth: 300,
+      flex: 1,
       renderCell: (params) => {
         return (
-          <div className="avatar">
-            <div className="w-6 xl:w-8 rounded-full">
+          <div className="flex gap-3 items-center">
+            <div className="w-6 xl:w-10 overflow-hidden flex justify-center items-center">
               <img
                 src={params.row.img || '/corrugated-box.jpg'}
                 alt="product-picture"
+                className="object-cover"
               />
             </div>
+            <span className="mb-0 pb-0 leading-none">
+              {params.row.title}
+            </span>
           </div>
         );
       },
     },
-    {
-      field: 'title',
-      type: 'string',
-      headerName: 'Title',
-      width: 250,
-    },
+    // {
+    //   field: 'title',
+    //   type: 'string',
+    //   headerName: 'Title',
+    //   width: 250,
+    // },
     {
       field: 'color',
       type: 'string',
       headerName: 'Color',
-      width: 150,
+      minWidth: 100,
+      flex: 1,
     },
     {
       field: 'price',
       type: 'string',
       headerName: 'Price',
-      width: 200,
+      minWidth: 100,
+      flex: 1,
     },
     {
       field: 'producer',
       headerName: 'Producer',
       type: 'string',
-      width: 200,
+      minWidth: 100,
+      flex: 1,
     },
     {
       field: 'createdAt',
       headerName: 'Created At',
-      width: 200,
+      minWidth: 100,
       type: 'string',
+      flex: 1,
     },
     {
       field: 'inStock',
       headerName: 'In Stock',
-      width: 150,
+      minWidth: 80,
       type: 'boolean',
+      flex: 1,
     },
   ];
 
@@ -88,10 +99,17 @@ const Products = () => {
   return (
     <div className="w-full p-0 m-0">
       <div className="w-full flex flex-col items-stretch gap-3">
-        <div className="w-full flex justify-between">
-          <h2 className="font-bold text-2xl xl:text-4xl mt-0 pt-0 text-base-content dark:text-neutral-200">
-            Products
-          </h2>
+        <div className="w-full flex justify-between xl:mb-5">
+          <div className="flex gap-1 justify-start flex-col items-start">
+            <h2 className="font-bold text-2xl xl:text-4xl mt-0 pt-0 text-base-content dark:text-neutral-200">
+              Products
+            </h2>
+            {data && data.length > 0 && (
+              <span className="text-neutral dark:text-neutral-content font-medium text-base">
+                {data.length} Products Found
+              </span>
+            )}
+          </div>
           <button
             onClick={() => setIsOpen(true)}
             className={`btn ${

@@ -22,10 +22,11 @@ const MenuItem: React.FC<MenuItemProps> = ({
       <span className="hidden xl:block px-2 xl:text-sm uppercase">
         {catalog}
       </span>
-      {listItems.map((listItem) => {
+      {listItems.map((listItem, index) => {
         if (listItem.isLink) {
           return (
             <NavLink
+              key={index}
               to={listItem.url || ''}
               className={({ isActive }) =>
                 isActive
@@ -42,6 +43,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         } else {
           return (
             <button
+              key={index}
               onClick={listItem.onClick}
               className="btn btn-ghost btn-block justify-start"
             >

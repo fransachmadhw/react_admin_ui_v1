@@ -75,3 +75,8 @@
 .dataGrid .MuiDataGrid-toolbarContainer ::placeholder {
     @apply text-base-content
 }
+
+.modal-action> :not([hidden])~ :not([hidden]) {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}

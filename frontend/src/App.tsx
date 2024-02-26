@@ -20,6 +20,7 @@ import Charts from './pages/Charts';
 import Logs from './pages/Logs';
 import ToasterProvider from './components/ToasterProvider';
 import Settings from './pages/Settings';
+import EditProfile from './pages/EditProfile';
 
 function App() {
   const Layout = () => {
@@ -31,11 +32,11 @@ function App() {
         <ToasterProvider />
         <div>
           <Navbar />
-          <div className="w-full flex gap-0 pt-20 xl:pt-[86px] 2xl:pt-[112px] mb-auto">
-            <div className="hidden xl:block xl:w-[250px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:py-1">
+          <div className="w-full flex gap-0 pt-20 xl:pt-[96px] 2xl:pt-[112px] mb-auto">
+            <div className="hidden xl:block xl:w-[250px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:px-4 xl:py-1">
               <Menu />
             </div>
-            <div className="w-full px-4 xl:px-3 xl:py-2 overflow-clip">
+            <div className="w-full px-4 xl:px-4 2xl:px-5 xl:py-2 overflow-clip">
               <Outlet />
             </div>
           </div>
@@ -57,6 +58,10 @@ function App() {
         {
           path: '/profile',
           element: <Profile />,
+        },
+        {
+          path: '/profile/edit',
+          element: <EditProfile />,
         },
         {
           path: '/users',

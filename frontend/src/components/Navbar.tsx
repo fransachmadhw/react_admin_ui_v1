@@ -26,7 +26,7 @@ const Navbar = () => {
   }, [element, isFullScreen]);
 
   return (
-    <div className="fixed z-[3] top-0 left-0 right-0 bg-base-100 w-full flex justify-between pl-4 xl:pl-3 pr-4 xl:pr-0 py-3 xl:py-5 gap-4 xl:gap-0">
+    <div className="fixed z-[3] top-0 left-0 right-0 bg-base-100 w-full flex justify-between px-3 xl:px-4 py-3 xl:py-5 gap-4 xl:gap-0">
       <div className="flex gap-3 items-center">
         <div className="drawer w-auto p-0 xl:hidden">
           <input
@@ -50,8 +50,9 @@ const Navbar = () => {
               className="drawer-overlay"
             ></label>
             <div className="menu p-4 w-auto min-h-full bg-base-200 text-base-content">
-              {menu.map((item) => (
+              {menu.map((item, index) => (
                 <MenuItem
+                  key={index}
                   catalog={item.catalog}
                   listItems={item.listItems}
                 />
@@ -66,7 +67,7 @@ const Navbar = () => {
           </span>
         </Link>
       </div>
-      <div className="flex items-center xl:pr-3 gap-0">
+      <div className="flex items-center gap-0">
         <button
           onClick={() =>
             toast('Gaboleh cari!', {
@@ -97,25 +98,40 @@ const Navbar = () => {
         >
           <HiOutlineBell className="text-xl xl:text-xl" />
         </button>
-        <div className="px-0 xl:px-auto btn btn-circle btn-ghost mr-2 xl:mr-0">
+        <div className="px-0 xl:px-auto btn btn-circle btn-ghost xl:mr-1">
           <ChangeThemes />
         </div>
-        <Link
-          to={'/profile'}
-          className="px-0 xl:px-4 btn btn-ghost flex items-center"
-        >
-          <div className="avatar">
-            <div className="w-8 rounded-full">
+        <div className="dropdown dropdown-end">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar"
+          >
+            <div className="w-9 rounded-full">
               <img
                 src="https://avatars.githubusercontent.com/u/74099030?v=4"
                 alt="foto-cowok-ganteng"
               />
             </div>
           </div>
-          <span className="hidden xl:block m-0 p-0 xl:text-[14px]">
-            Frans
-          </span>
-        </Link>
+          <ul
+            tabIndex={0}
+            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a className="justify-between">
+                My Profile
+                <span className="badge">New</span>
+              </a>
+            </li>
+            <li>
+              <a>Settings</a>
+            </li>
+            <li>
+              <a>Log Out</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

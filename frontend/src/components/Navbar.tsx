@@ -26,8 +26,11 @@ const Navbar = () => {
   }, [element, isFullScreen]);
 
   return (
+    // navbar screen
     <div className="fixed z-[3] top-0 left-0 right-0 bg-base-100 w-full flex justify-between px-3 xl:px-4 py-3 xl:py-5 gap-4 xl:gap-0">
+      {/* container */}
       <div className="flex gap-3 items-center">
+        {/* for mobile */}
         <div className="drawer w-auto p-0 xl:hidden">
           <input
             id="my-drawer"
@@ -35,7 +38,6 @@ const Navbar = () => {
             className="drawer-toggle"
           />
           <div className="p-0 w-auto drawer-content">
-            {/* Page content here */}
             <label
               htmlFor="my-drawer"
               className="p-0 btn btn-ghost drawer-button"
@@ -60,6 +62,8 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {/* navbar logo */}
         <Link to={'/'} className="flex items-center gap-1 xl:gap-2">
           <DiReact className="text-4xl xl:text-4xl 2xl:text-6xl text-primary animate-spin-slow" />
           <span className="text-[18px] leading-[1.2] xl:text-xl 2xl:text-2xl font-semibold text-base-content dark:text-neutral-200">
@@ -67,7 +71,10 @@ const Navbar = () => {
           </span>
         </Link>
       </div>
+
+      {/* navbar items to right */}
       <div className="flex items-center gap-0">
+        {/* search */}
         <button
           onClick={() =>
             toast('Gaboleh cari!', {
@@ -78,6 +85,8 @@ const Navbar = () => {
         >
           <HiSearch className="xl:text-xl" />
         </button>
+
+        {/* fullscreen */}
         <button
           onClick={toggleFullScreen}
           className="hidden xl:inline-flex btn btn-circle btn-ghost"
@@ -88,6 +97,8 @@ const Navbar = () => {
             <RxExitFullScreen className="xl:text-xl" />
           )}
         </button>
+
+        {/* notification */}
         <button
           onClick={() =>
             toast('Gaada notif!', {
@@ -98,9 +109,13 @@ const Navbar = () => {
         >
           <HiOutlineBell className="text-xl xl:text-xl" />
         </button>
+
+        {/* theme */}
         <div className="px-0 xl:px-auto btn btn-circle btn-ghost xl:mr-1">
           <ChangeThemes />
         </div>
+
+        {/* avatar dropdown */}
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
@@ -116,18 +131,25 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-40"
           >
-            <li>
-              <a className="justify-between">
-                My Profile
-                <span className="badge">New</span>
-              </a>
-            </li>
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
+            <Link to={'/profile'}>
+              <li>
+                <a className="justify-between">My Profile</a>
+              </li>
+            </Link>
+            <Link to={'/settings'}>
+              <li>
+                <a>Settings</a>
+              </li>
+            </Link>
+            <li
+              onClick={() =>
+                toast('Gaboleh Keluar!', {
+                  icon: '😠',
+                })
+              }
+            >
               <a>Log Out</a>
             </li>
           </ul>

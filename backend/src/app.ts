@@ -19,7 +19,6 @@ import totalVisit from './data/totalVisit';
 import totalProfit from './data/totalProfit';
 import totalSource from './data/totalSource';
 import totalRevenueByProducts from './data/totalRevenueByProducts';
-import notes from './data/notes';
 
 require('dotenv').config();
 
@@ -137,32 +136,6 @@ app.get('/totalprofit', (req, res) => {
 // GET TOTAL REVENUE BY PRODUCTS
 app.get('/totalrevenue-by-product', (req, res) => {
   res.json(totalRevenueByProducts);
-});
-
-// GET NOTES
-app.get('/notes', (req, res) => {
-  const { q } = req.query;
-  const keys = ['title', 'body'];
-
-  interface Note {
-    id: number;
-    title: string;
-    body: string;
-    date: string;
-    author: string;
-  }
-
-  const search = (data: Note[]) => {
-    return data.filter((item) =>
-      keys.some((key) =>
-        (item as any)[key].toLowerCase().includes(q as string)
-      )
-    );
-  };
-
-  q
-    ? res.json(search(notes).slice(0, 10))
-    : res.json(notes.slice(0, 10));
 });
 
 app.use('/api/v1', api);

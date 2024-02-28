@@ -10,10 +10,12 @@ interface NoteCardProps {
   >;
   setTitleSelected: React.Dispatch<React.SetStateAction<string>>;
   setBodySelected: React.Dispatch<React.SetStateAction<string>>;
+  setTopicSelected: React.Dispatch<React.SetStateAction<string>>;
   title: string;
   body: string;
   date?: string;
   author?: string;
+  topic: string;
 }
 
 const NoteCard: React.FC<NoteCardProps> = ({
@@ -22,10 +24,12 @@ const NoteCard: React.FC<NoteCardProps> = ({
   setSelectedCard,
   setTitleSelected,
   setBodySelected,
+  setTopicSelected,
   title,
   body,
   // date,
   // author,
+  topic,
 }) => {
   return (
     <div
@@ -37,6 +41,7 @@ const NoteCard: React.FC<NoteCardProps> = ({
         });
         setTitleSelected(title);
         setBodySelected(body);
+        setTopicSelected(topic);
       }}
       className={`w-full btn min-h-[auto] h-auto rounded-3xl border-none flex flex-col items-start text-start group bg-[#fafafa] hover:bg-primary hover:text-primary-content dark:bg-neutral dark:hover:bg-primary
       ${

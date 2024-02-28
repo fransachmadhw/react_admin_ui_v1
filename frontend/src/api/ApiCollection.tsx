@@ -209,3 +209,19 @@ export const fetchPosts = async () => {
 
   return response;
 };
+
+// GET ALL NOTES
+export const fetchNotes = async () => {
+  const response = await axios
+    .get(`https://react-admin-ui-v1-api.vercel.app/notes?q=`)
+    .then((res) => {
+      console.log('axios get:', res.data);
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+
+  return response;
+};

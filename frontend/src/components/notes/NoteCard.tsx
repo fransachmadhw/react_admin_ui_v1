@@ -1,4 +1,5 @@
 import React from 'react';
+
 interface NoteCardProps {
   setNoteSelected: React.Dispatch<React.SetStateAction<boolean>>;
   selectedCard: {
@@ -13,8 +14,8 @@ interface NoteCardProps {
   setTopicSelected: React.Dispatch<React.SetStateAction<string>>;
   title: string;
   body: string;
-  date?: string;
-  author?: string;
+  date: string;
+  author: string;
   topic: string;
 }
 
@@ -27,8 +28,8 @@ const NoteCard: React.FC<NoteCardProps> = ({
   setTopicSelected,
   title,
   body,
-  // date,
-  // author,
+  date,
+  author,
   topic,
 }) => {
   return (
@@ -51,10 +52,10 @@ const NoteCard: React.FC<NoteCardProps> = ({
       }
       `}
     >
-      <div className="card-body items-start text-start px-4 py-7">
+      <div className="card-body items-start text-start px-4 py-7 gap-3">
         <h4 className="card-title xl:text-base font-bold">{title}</h4>
         <p
-          className={`xl:text-sm leading-loose font-normal line-clamp-3 group-hover:text-primary-content dark:text-base-content
+          className={`xl:text-sm leading-loose font-normal line-clamp-2 group-hover:text-primary-content dark:text-base-content mb-1
         ${
           selectedCard.body === body
             ? 'text-primary-content dark:text-primary-content'
@@ -64,6 +65,16 @@ const NoteCard: React.FC<NoteCardProps> = ({
         >
           {body}
         </p>
+        <div
+          className={`w-full flex justify-between items-center text-xs group-hover:text-primary-content ${
+            selectedCard.body === body
+              ? 'text-primary-content dark:text-primary-content'
+              : 'text-neutral-400'
+          }`}
+        >
+          <span>{date}</span>
+          <span>{author}</span>
+        </div>
       </div>
     </div>
   );

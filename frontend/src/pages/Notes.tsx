@@ -79,7 +79,7 @@ const Notes = () => {
         {/* grid */}
         <div className="w-full grid xl:grid-cols-5 relative gap-10">
           {/* column 1 */}
-          <div className="w-full flex flex-col xl:gap-5 xl:col-span-2">
+          <div className="w-full flex flex-col gap-7 xl:gap-5 xl:col-span-2">
             {/* heading */}
             <div className="w-full flex items-center justify-between">
               <h2 className="font-bold text-2xl xl:text-4xl mt-0 pt-0 text-base-content dark:text-neutral-200">
@@ -93,7 +93,7 @@ const Notes = () => {
               <input
                 type="text"
                 placeholder="Search"
-                className="input input-bordered w-24 md:w-auto"
+                className="input input-bordered w-full"
                 onChange={(e) =>
                   setSearchQuery(e.target.value.toLowerCase())
                 }
@@ -105,7 +105,7 @@ const Notes = () => {
               tempTotalEntries.map((index: number) => (
                 <div
                   key={index}
-                  className="w-full h-40 xl:h-40 rounded-3xl skeleton dark:bg-neutral"
+                  className="w-full h-40 xl:h-40 rounded-3xl skeleton"
                 ></div>
               ))
             ) : isSuccess ? (
@@ -122,6 +122,8 @@ const Notes = () => {
                   setTitleSelected={setTitleSelected}
                   setBodySelected={setBodySelected}
                   setTopicSelected={setTopicSelected}
+                  date={note.date}
+                  author={note.author}
                 />
               ))
             ) : (
@@ -201,6 +203,35 @@ const Notes = () => {
             )}
           </div>
         </div>
+
+        {/* mobile only */}
+        {noteSelected && (
+          <div
+            onClick={() => {
+              setNoteSelected(false);
+              setSelectedCard({
+                title: '',
+                body: '',
+              });
+            }}
+            className="xl:hidden w-screen h-screen left-0 bottom-0 fixed bg-black/50 z-[99] flex items-end"
+          >
+            <div className="relative w-full bg-primary rounded-t-2xl p-5">
+              <button
+                onClick={() => {
+                  setNoteSelected(false);
+                  setSelectedCard({
+                    title: '',
+                    body: '',
+                  });
+                }}
+                className="btn"
+              >
+                coba
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

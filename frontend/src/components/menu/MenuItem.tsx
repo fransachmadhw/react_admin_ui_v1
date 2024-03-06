@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { IconType } from 'react-icons';
 
 interface MenuItemProps {
-  onClick: () => void;
+  onClick?: () => void;
   catalog: string;
   listItems: Array<{
     isLink: boolean;

@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 
 import NoteCard from '../components/notes/NoteCard';
 import { fetchNotes } from '../api/ApiCollection';
+import { HiOutlineXMark } from 'react-icons/hi2';
 // import { allNotes } from '../components/notes/data';
 
 interface Note {
@@ -134,7 +135,7 @@ const Notes = () => {
           </div>
 
           {/* column 2 */}
-          <div className="w-full relative inline-block xl:col-span-3 bg-base-100">
+          <div className="hidden w-full relative xl:inline-block xl:col-span-3 bg-base-100">
             {/* content */}
             {!noteSelected ? (
               <div className="sticky xl:top-[88px] z-10 xl:h-[80vh] flex justify-center items-center">
@@ -203,35 +204,97 @@ const Notes = () => {
             )}
           </div>
         </div>
-
         {/* mobile only */}
-        {noteSelected && (
+        <div
+          onClick={() => {
+            setNoteSelected(false);
+            setSelectedCard({
+              title: '',
+              body: '',
+            });
+          }}
+          className={`w-screen h-screen left-0 bottom-0 fixed z-[99] flex items-end transition-all duration-[2s] bg-black/50
+            ${
+              noteSelected
+                ? 'opacity-100 inline-flex xl:hidden'
+                : 'opacity-0 hidden'
+            }`}
+        >
           <div
-            onClick={() => {
-              setNoteSelected(false);
-              setSelectedCard({
-                title: '',
-                body: '',
-              });
-            }}
-            className="xl:hidden w-screen h-screen left-0 bottom-0 fixed bg-black/50 z-[99] flex items-end"
+            className={`relative w-full h-[70vh] flex flex-col items-start gap-3 bg-base-100 rounded-t-3xl p-5 transition-all duration-[1s] overflow-auto
+              ${noteSelected ? 'translate-y-0' : 'translate-y-full'}`}
           >
-            <div className="relative w-full bg-primary rounded-t-2xl p-5">
-              <button
-                onClick={() => {
-                  setNoteSelected(false);
-                  setSelectedCard({
-                    title: '',
-                    body: '',
-                  });
-                }}
-                className="btn"
-              >
-                coba
-              </button>
+            <button
+              onClick={() => {
+                setNoteSelected(false);
+                setSelectedCard({
+                  title: '',
+                  body: '',
+                });
+              }}
+              className="btn btn-circle fixed top-5 right-5 z-[99]"
+            >
+              <HiOutlineXMark />
+            </button>
+            <div className="relative w-full h-[256px] flex justify-center">
+              {topicSelected == 'e-commerce' && (
+                <img
+                  src="/e-commerce-vector.png"
+                  alt="vector"
+                  className="object-cover w-auto h-full grayscale"
+                />
+              )}
+              {topicSelected == 'marketing' && (
+                <img
+                  src="/marketing-vector.png"
+                  alt="vector"
+                  className="object-cover w-auto h-full grayscale"
+                />
+              )}
+              {topicSelected == 'social-media' && (
+                <img
+                  src="/social-media-vector.png"
+                  alt="vector"
+                  className="object-cover w-auto h-full grayscale"
+                />
+              )}
+              {topicSelected == 'SEO' && (
+                <img
+                  src="/SEO-vector.png"
+                  alt="vector"
+                  className="object-cover w-auto h-full grayscale"
+                />
+              )}
+              {topicSelected == 'productivity' && (
+                <img
+                  src="/productivity-vector.png"
+                  alt="vector"
+                  className="object-cover w-auto h-full grayscale"
+                />
+              )}
+              {topicSelected == 'communication' && (
+                <img
+                  src="/communication-vector.png"
+                  alt="vector"
+                  className="object-cover w-auto h-full grayscale"
+                />
+              )}
+              {topicSelected == '' && (
+                <img
+                  src="/e-commerce-vector.png"
+                  alt="vector"
+                  className="object-cover w-auto h-full grayscale"
+                />
+              )}
             </div>
+            <h2 className="font-bold text-xl mt-0 pt-0 text-base-content dark:text-neutral-200">
+              {titleSelected}
+            </h2>
+            <p className="text-lg leading-normal mb-8">
+              {bodySelected}
+            </p>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

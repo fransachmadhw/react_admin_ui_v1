@@ -84,3 +84,23 @@
 .skeleton {
     @apply dark:bg-neutral
 }
+
+.fc .fc-header-toolbar .fc-toolbar-chunk {
+    @apply text-[10px] xl:text-base
+}
+
+.fc .fc-header-toolbar .fc-toolbar-chunk .fc-button {
+    @apply btn dark:btn-neutral
+}
+
+.fc .fc-header-toolbar .fc-toolbar-chunk .fc-button-group {
+    @apply gap-2
+}
+
+.fc .fc-header-toolbar .fc-toolbar-chunk .fc-button.fc-button-primary {
+    @apply border-none text-base-content
+}
+
+.fc .fc-header-toolbar .fc-toolbar-chunk .fc-button.fc-button-primary:disabled {
+    @apply btn-disabled opacity-50
+}

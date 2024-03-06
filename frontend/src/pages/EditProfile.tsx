@@ -38,16 +38,16 @@ const EditProfile = () => {
     // screen
     <div className="w-full p-0 m-0">
       {/* container */}
-      <div className="w-full flex flex-col items-stretch gap-5 xl:gap-8">
+      <div className="w-full flex flex-col items-stretch gap-7 xl:gap-8">
         {/* block 1 */}
-        <div className="flex items-start justify-between">
+        <div className="flex flex-col xl:flex-row items-start justify-between gap-3 xl:gap-0">
           <h2 className="font-bold text-2xl xl:text-4xl mt-0 pt-0 text-base-content dark:text-neutral-200">
             My Profile
           </h2>
-          <div className="flex gap-3">
+          <div className="w-full xl:w-auto grid grid-cols-2 xl:flex gap-3">
             <button
               onClick={() => navigate('/profile')}
-              className="btn dark:btn-neutral"
+              className="btn btn-block xl:w-auto dark:btn-neutral"
             >
               Discard Changes
             </button>
@@ -56,7 +56,7 @@ const EditProfile = () => {
                 navigate('/profile');
                 toast('Gabisa diedit dong!', { icon: '😛' });
               }}
-              className="btn btn-primary"
+              className="btn btn-block xl:w-auto btn-primary"
             >
               Save Changes
             </button>
@@ -68,12 +68,12 @@ const EditProfile = () => {
           <div className="relative inline-flex">
             <button
               onClick={handleIconClick}
-              className="btn btn-circle top-0 right-0 absolute z-[99]"
+              className="btn btn-circle btn-sm xl:btn-md top-0 right-0 absolute z-[1]"
             >
-              <HiOutlinePencil className="xl:text-lg" />
+              <HiOutlinePencil className="text-xs xl:text-lg" />
             </button>
             <div className="avatar">
-              <div className="w-12 xl:w-36 rounded-full">
+              <div className="w-24 xl:w-36 rounded-full">
                 <img
                   src={
                     preview ||
@@ -100,20 +100,20 @@ const EditProfile = () => {
           </div>
         </div>
         {/* block 3 */}
-        <div className="w-full flex flex-col items-stretch xl:gap-7">
+        <div className="w-full flex flex-col items-stretch gap-3 xl:gap-7">
           {/* heading */}
-          <div className="flex items-center w-full xl:gap-5">
+          <div className="flex items-center w-full gap-3 xl:gap-5">
             <h4 className="font-semibold text-lg xl:text-2xl whitespace-nowrap">
               Basic Information
             </h4>
-            <div className="w-full h-[2px] bg-base-300 dark:bg-slate-700 xl:mt-1"></div>
+            <div className="w-full h-[2px] bg-base-300 dark:bg-slate-700 mt-1"></div>
           </div>
           {/* grid */}
-          <div className="w-full grid xl:grid-cols-3 gap-5 xl:gap-5 2xl:gap-20 xl:text-base">
+          <div className="w-full grid xl:grid-cols-3 gap-3 xl:gap-5 2xl:gap-20 xl:text-base">
             {/* column 1 */}
-            <div className="w-full flex flex-col xl:gap-5">
+            <div className="w-full flex flex-col gap-3 xl:gap-5">
               {/* row 1 */}
-              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center">
+              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
                   <span className="whitespace-nowrap">
                     First Name*
@@ -130,7 +130,7 @@ const EditProfile = () => {
                 />
               </div>
               {/* row 2 */}
-              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center">
+              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
                   <span className="whitespace-nowrap">
                     Last Name*
@@ -147,7 +147,7 @@ const EditProfile = () => {
                 />
               </div>
               {/* row 3 */}
-              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center">
+              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
                   <span className="whitespace-nowrap">Nickname</span>
                 </div>
@@ -163,9 +163,9 @@ const EditProfile = () => {
               </div>
             </div>
             {/* column 2 */}
-            <div className="w-full flex flex-col xl:gap-5">
+            <div className="w-full flex flex-col gap-3 xl:gap-5">
               {/* row 1 */}
-              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center">
+              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
                   <span className="whitespace-nowrap">Email*</span>
                 </div>
@@ -180,7 +180,7 @@ const EditProfile = () => {
                 />
               </div>
               {/* row 2 */}
-              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center">
+              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
                   <span className="whitespace-nowrap">Phone</span>
                 </div>
@@ -195,11 +195,19 @@ const EditProfile = () => {
                 />
               </div>
               {/* row 3 */}
-              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center">
+              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
                   <span className="whitespace-nowrap">Address</span>
                 </div>
-                <input
+                <textarea
+                  className="textarea textarea-bordered w-full col-span-2 2xl:col-span-3"
+                  placeholder="Address"
+                  value={address}
+                  onChange={(element) =>
+                    setAddress(element.target.value)
+                  }
+                ></textarea>
+                {/* <input
                   type="text"
                   placeholder="Type here"
                   value={address}
@@ -207,13 +215,13 @@ const EditProfile = () => {
                     setAddress(element.target.value)
                   }
                   className="input input-bordered w-full col-span-2 2xl:col-span-3"
-                />
+                /> */}
               </div>
             </div>
             {/* column 3 */}
-            <div className="w-full flex flex-col xl:gap-5">
+            <div className="w-full flex flex-col gap-3 xl:gap-5">
               {/* row 1 */}
-              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center">
+              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
                   <span className="whitespace-nowrap">Password</span>
                 </div>
@@ -225,58 +233,85 @@ const EditProfile = () => {
           </div>
         </div>
         {/* block 4 */}
-        <div className="w-full flex flex-col items-stretch xl:gap-7">
+        <div className="w-full flex flex-col items-stretch gap-6 xl:gap-7">
           {/* heading */}
           <div className="flex flex-col gap-2">
-            <div className="flex items-center w-full xl:gap-5">
+            <div className="flex items-center w-full gap-3 xl:gap-5">
               <h4 className="font-semibold text-lg xl:text-2xl whitespace-nowrap">
                 Account Integrations
               </h4>
-              <div className="w-full h-[2px] bg-base-300 dark:bg-slate-700 xl:mt-1"></div>
+              <div className="w-full h-[2px] bg-base-300 dark:bg-slate-700 mt-1"></div>
             </div>
-            <span className="xl:text-sm text-neutral-400 dark:text-neutral-content">
+            <span className="text-sm xl:text-sm text-neutral-400 dark:text-neutral-content">
               Authorize faster and easier with your external service
               account.
             </span>
           </div>
           {/* services block */}
-          <div className="flex gap-5">
+          <div className="grid grid-cols-3 xl:flex gap-5">
             {/* column 1 */}
-            <div className="flex flex-col items-start gap-5 xl:w-[240px]">
-              <button className="btn btn-block justify-start btn-disabled">
+            <div className="col-span-2 flex flex-col items-start gap-5 xl:w-[240px]">
+              <button
+                onClick={() =>
+                  toast('Gaboleh', {
+                    icon: '😠',
+                  })
+                }
+                className="btn btn-block btn-disabled flex-nowrap justify-start dark:btn-neutral"
+              >
                 <img
-                  className="xl:w-6"
+                  className="w-6"
                   src="/icons8-microsoft.svg"
                   alt="microsoft"
                 />
-                <span>Connect with Microsoft</span>
+                <span className="text-start whitespace-nowrap text-xs xl:text-sm">
+                  Connect with Microsoft
+                </span>
               </button>
               <div className="px-4 gap-2 min-h-12 text-sm font-semibold flex items-center justify-start">
                 <img
-                  className="xl:w-6"
+                  className="w-6"
                   src="/icons8-google.svg"
                   alt="google"
                 />
-                <span>Connected with Google</span>
+                <span className="text-start whitespace-nowrap text-xs xl:text-sm">
+                  Connected with Google
+                </span>
               </div>
-              <button className="btn btn-block justify-start btn-disabled">
+              <button
+                onClick={() =>
+                  toast('Gaboleh', {
+                    icon: '😠',
+                  })
+                }
+                className="btn btn-block btn-disabled justify-start dark:btn-neutral"
+              >
                 <img
-                  className="dark:hidden xl:w-6"
+                  className="dark:hidden w-6"
                   src="/icons8-apple-black.svg"
                   alt="apple"
                 />
                 <img
-                  className="hidden dark:block xl:w-6"
+                  className="hidden dark:block w-6"
                   src="/icons8-apple-white.svg"
                   alt="apple"
                 />
-                <span>Connect with Apple</span>
+                <span className="text-start whitespace-nowrap text-xs xl:text-sm">
+                  Connect with Apple
+                </span>
               </button>
             </div>
             {/* column 2 */}
-            <div className="flex flex-col items-start gap-5">
+            <div className="col-span-1 flex flex-col items-start gap-5">
               <button className="btn btn-ghost text-error"></button>
-              <button className="btn btn-disabled text-error">
+              <button
+                onClick={() =>
+                  toast('Gaboleh', {
+                    icon: '😠',
+                  })
+                }
+                className="btn btn-ghost btn-disabled text-error text-xs xl:text-sm"
+              >
                 Disconnect
               </button>
               <button className="btn btn-ghost text-error"></button>
@@ -286,10 +321,10 @@ const EditProfile = () => {
         {/* block 5 */}
         <div className="w-full flex justify-start items-center mt-10">
           <button
-            className="btn btn-disabled text-error"
+            className="btn dark:btn-neutral btn-disabled text-error dark:text-error text-xs xl:text-sm"
             onClick={() => modalDelete.current?.showModal()}
           >
-            <HiOutlineTrash className="xl:text-lg" />
+            <HiOutlineTrash className="text-lg" />
             Delete My Account
           </button>
           <dialog
@@ -305,7 +340,14 @@ const EditProfile = () => {
                 Do you want to delete your account?
               </p>
               <div className="modal-action mx-0 flex-col items-stretch justify-stretch gap-3">
-                <button className="btn btn-error btn-block text-base-100 dark:text-white">
+                <button
+                  onClick={() =>
+                    toast('Lancang kamu ya!', {
+                      icon: '😠',
+                    })
+                  }
+                  className="btn btn-error btn-block text-base-100 dark:text-white"
+                >
                   Yes, I want to delete my account
                 </button>
                 <form method="dialog" className="m-0 w-full">

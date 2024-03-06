@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { IconType } from 'react-icons';
 
 interface MenuItemProps {
+  onClick: () => void;
   catalog: string;
   listItems: Array<{
     isLink: boolean;
@@ -14,6 +15,7 @@ interface MenuItemProps {
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
+  onClick,
   catalog,
   listItems,
 }) => {
@@ -27,6 +29,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
           return (
             <NavLink
               key={index}
+              onClick={onClick}
               to={listItem.url || ''}
               className={({ isActive }) =>
                 isActive

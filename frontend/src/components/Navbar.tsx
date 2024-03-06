@@ -13,6 +13,9 @@ const Navbar = () => {
   const [isFullScreen, setIsFullScreen] = React.useState(true);
   const element = document.getElementById('root');
 
+  const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+  const toggleDrawer = () => setDrawerOpen(!isDrawerOpen);
+
   const toggleFullScreen = () => {
     setIsFullScreen((prev) => !prev);
   };
@@ -33,13 +36,15 @@ const Navbar = () => {
         {/* for mobile */}
         <div className="drawer w-auto p-0 mr-1 xl:hidden">
           <input
-            id="my-drawer"
+            id="drawer-navbar-mobile"
             type="checkbox"
             className="drawer-toggle"
+            checked={isDrawerOpen}
+            onChange={toggleDrawer}
           />
           <div className="p-0 w-auto drawer-content">
             <label
-              htmlFor="my-drawer"
+              htmlFor="drawer-navbar-mobile"
               className="p-0 btn btn-ghost drawer-button"
             >
               <HiBars3CenterLeft className="text-2xl" />
@@ -47,13 +52,14 @@ const Navbar = () => {
           </div>
           <div className="drawer-side z-[99]">
             <label
-              htmlFor="my-drawer"
+              htmlFor="drawer-navbar-mobile"
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
             <div className="menu p-4 w-auto min-h-full bg-base-200 text-base-content">
               {menu.map((item, index) => (
                 <MenuItem
+                  onClick={toggleDrawer}
                   key={index}
                   catalog={item.catalog}
                   listItems={item.listItems}

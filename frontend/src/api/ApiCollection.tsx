@@ -225,3 +225,19 @@ export const fetchNotes = async () => {
 
   return response;
 };
+
+// GET ALL LOGS
+export const fetchLogs = async () => {
+  const response = await axios
+    .get(`https://react-admin-ui-v1-api.vercel.app/logs`)
+    .then((res) => {
+      console.log('axios get:', res.data);
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+
+  return response;
+};

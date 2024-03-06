@@ -257,10 +257,10 @@ const EditProfile = () => {
                     icon: '😠',
                   })
                 }
-                className="btn btn-block btn-disabled flex-nowrap justify-start dark:btn-neutral"
+                className="btn btn-block btn-disabled flex-nowrap justify-start"
               >
                 <img
-                  className="w-6"
+                  className="w-6 opacity-20"
                   src="/icons8-microsoft.svg"
                   alt="microsoft"
                 />
@@ -284,15 +284,15 @@ const EditProfile = () => {
                     icon: '😠',
                   })
                 }
-                className="btn btn-block btn-disabled justify-start dark:btn-neutral"
+                className="btn btn-block btn-disabled justify-start"
               >
                 <img
-                  className="dark:hidden w-6"
+                  className="dark:hidden w-6 opacity-20"
                   src="/icons8-apple-black.svg"
                   alt="apple"
                 />
                 <img
-                  className="hidden dark:block w-6"
+                  className="hidden dark:block w-6 opacity-20"
                   src="/icons8-apple-white.svg"
                   alt="apple"
                 />
@@ -321,7 +321,7 @@ const EditProfile = () => {
         {/* block 5 */}
         <div className="w-full flex justify-start items-center mt-10">
           <button
-            className="btn dark:btn-neutral btn-disabled text-error dark:text-error text-xs xl:text-sm"
+            className="btn btn-disabled text-error text-xs xl:text-sm"
             onClick={() => modalDelete.current?.showModal()}
           >
             <HiOutlineTrash className="text-lg" />

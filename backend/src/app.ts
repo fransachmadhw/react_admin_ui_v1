@@ -20,6 +20,7 @@ import totalProfit from './data/totalProfit';
 import totalSource from './data/totalSource';
 import totalRevenueByProducts from './data/totalRevenueByProducts';
 import notes from './data/notes';
+import logs from './data/logs';
 
 require('dotenv').config();
 
@@ -163,6 +164,11 @@ app.get('/notes', (req, res) => {
   q
     ? res.json(search(notes).slice(0, 10))
     : res.json(notes.slice(0, 10));
+});
+
+// GET LOGS
+app.get('/logs', (req, res) => {
+  res.json(logs);
 });
 
 app.use('/api/v1', api);

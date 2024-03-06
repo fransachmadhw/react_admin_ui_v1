@@ -118,12 +118,27 @@ const Users = () => {
           </button>
         </div>
         {isLoading ? (
-          <DataTable slug="users" columns={columns} rows={[]} />
+          <DataTable
+            slug="users"
+            columns={columns}
+            rows={[]}
+            includeActionColumn={true}
+          />
         ) : isSuccess ? (
-          <DataTable slug="users" columns={columns} rows={data} />
+          <DataTable
+            slug="users"
+            columns={columns}
+            rows={data}
+            includeActionColumn={true}
+          />
         ) : (
           <>
-            <DataTable slug="users" columns={columns} rows={[]} />
+            <DataTable
+              slug="users"
+              columns={columns}
+              rows={[]}
+              includeActionColumn={true}
+            />
             <div className="w-full flex justify-center">
               Error while getting the data!
             </div>

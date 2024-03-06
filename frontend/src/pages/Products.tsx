@@ -121,12 +121,27 @@ const Products = () => {
         </div>
 
         {isLoading ? (
-          <DataTable slug="products" columns={columns} rows={[]} />
+          <DataTable
+            slug="products"
+            columns={columns}
+            rows={[]}
+            includeActionColumn={true}
+          />
         ) : isSuccess ? (
-          <DataTable slug="products" columns={columns} rows={data} />
+          <DataTable
+            slug="products"
+            columns={columns}
+            rows={data}
+            includeActionColumn={true}
+          />
         ) : (
           <>
-            <DataTable slug="products" columns={columns} rows={[]} />
+            <DataTable
+              slug="products"
+              columns={columns}
+              rows={[]}
+              includeActionColumn={true}
+            />
             <div className="w-full flex justify-center">
               Error while getting the data!
             </div>

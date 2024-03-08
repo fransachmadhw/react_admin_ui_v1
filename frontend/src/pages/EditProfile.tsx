@@ -73,7 +73,7 @@ const EditProfile = () => {
               <HiOutlinePencil className="text-xs xl:text-lg" />
             </button>
             <div className="avatar">
-              <div className="w-24 xl:w-36 rounded-full">
+              <div className="w-24 xl:w-36 2xl:w-48 rounded-full">
                 <img
                   src={
                     preview ||

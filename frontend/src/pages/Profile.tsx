@@ -27,7 +27,7 @@ const Profile = () => {
         {/* block 2 */}
         <div className="flex items-center gap-3 xl:gap-8 xl:mb-4">
           <div className="avatar">
-            <div className="w-24 xl:w-36 rounded-full">
+            <div className="w-24 xl:w-36 2xl:w-48 rounded-full">
               <img
                 src="https://avatars.githubusercontent.com/u/74099030?v=4"
                 alt="foto-cowok-ganteng"

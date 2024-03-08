@@ -104,3 +104,21 @@
 .fc .fc-header-toolbar .fc-toolbar-chunk .fc-button.fc-button-primary:disabled {
     @apply btn-disabled opacity-50
 }
+
+#singleUser #activities ul li {
+    @apply list-none relative w-[1px] pt-[50px] bg-primary
+}
+
+#singleUser #activities ul li::after {
+    content: "";
+    @apply absolute left-[50%] bottom-0 w-[10px] h-[10px] rounded-full bg-primary -translate-x-[50%]
+}
+
+#singleProduct #activities ul li {
+    @apply list-none relative w-[1px] pt-[50px] bg-primary
+}
+
+#singleProduct #activities ul li::after {
+    content: "";
+    @apply absolute left-[50%] bottom-0 w-[10px] h-[10px] rounded-full bg-primary -translate-x-[50%]
+}

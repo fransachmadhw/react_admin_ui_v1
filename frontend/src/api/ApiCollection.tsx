@@ -162,10 +162,42 @@ export const fetchUsers = async () => {
   return response;
 };
 
+// GET SINGLE USER
+export const fetchSingleUser = async (id: string) => {
+  const response = await axios
+    .get(`https://react-admin-ui-v1-api.vercel.app/users/${id}`)
+    .then((res) => {
+      console.log('axios get:', res.data);
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+
+  return response;
+};
+
 // GET ALL PRODUCTS
 export const fetchProducts = async () => {
   const response = await axios
     .get('https://react-admin-ui-v1-api.vercel.app/products')
+    .then((res) => {
+      console.log('axios get:', res.data);
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+
+  return response;
+};
+
+// GET SINGLE PRODUCT
+export const fetchSingleProduct = async (id: string) => {
+  const response = await axios
+    .get(`https://react-admin-ui-v1-api.vercel.app/products/${id}`)
     .then((res) => {
       console.log('axios get:', res.data);
       return res.data;

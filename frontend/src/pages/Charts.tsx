@@ -170,7 +170,7 @@ const Charts = () => {
         </h2>
         {/* grid */}
         <div className="w-full grid xl:grid-cols-2 gap-5">
-          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px]">
+          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px] xl:min-h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart width={300} height={100} data={dataLine}>
                 <Line

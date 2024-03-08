@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom';
 import Home from './pages/Home';
 import Users from './pages/Users';
-import Login from './pages/Login';
 import Products from './pages/Products';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -19,8 +18,9 @@ import Calendar from './pages/Calendar';
 import Charts from './pages/Charts';
 import Logs from './pages/Logs';
 import ToasterProvider from './components/ToasterProvider';
-import Settings from './pages/Settings';
 import EditProfile from './pages/EditProfile';
+import User from './pages/User';
+import Product from './pages/Product';
 
 function App() {
   const Layout = () => {
@@ -68,8 +68,16 @@ function App() {
           element: <Users />,
         },
         {
+          path: '/users/:id',
+          element: <User />,
+        },
+        {
           path: '/products',
           element: <Products />,
+        },
+        {
+          path: '/products/:id',
+          element: <Product />,
         },
         {
           path: '/orders',
@@ -95,16 +103,8 @@ function App() {
           path: '/logs',
           element: <Logs />,
         },
-        {
-          path: '/settings',
-          element: <Settings />,
-        },
       ],
       errorElement: <Error />,
-    },
-    {
-      path: 'login',
-      element: <Login />,
     },
   ]);
 

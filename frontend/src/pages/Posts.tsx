@@ -206,14 +206,14 @@ const Posts = () => {
             slug="orders"
             columns={columns}
             rows={[]}
-            includeActionColumn={true}
+            includeActionColumn={false}
           />
         ) : isSuccess ? (
           <DataTable
             slug="orders"
             columns={columns}
             rows={data}
-            includeActionColumn={true}
+            includeActionColumn={false}
           />
         ) : (
           <>
@@ -221,7 +221,7 @@ const Posts = () => {
               slug="orders"
               columns={columns}
               rows={[]}
-              includeActionColumn={true}
+              includeActionColumn={false}
             />
             <div className="w-full flex justify-center">
               Error while getting the data!

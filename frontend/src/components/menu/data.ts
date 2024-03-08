@@ -12,7 +12,7 @@ import {
   HiOutlineDocumentText,
   HiOutlineArrowLeftOnRectangle,
 } from 'react-icons/hi2';
-import { IoSettingsOutline } from 'react-icons/io5';
+// import { IoSettingsOutline } from 'react-icons/io5';
 
 export const menu = [
   {
@@ -98,12 +98,12 @@ export const menu = [
   {
     catalog: 'miscellaneous',
     listItems: [
-      {
-        isLink: true,
-        url: '/settings',
-        icon: IoSettingsOutline,
-        label: 'settings',
-      },
+      // {
+      //   isLink: true,
+      //   url: '/settings',
+      //   icon: IoSettingsOutline,
+      //   label: 'settings',
+      // },
       {
         isLink: false,
         onClick: () => {

@@ -33,14 +33,14 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   const navigationLinks = {
-    route1: '/users',
-    route2: '/users/:id',
-    route3: '/products',
-    route4: '/products/:id',
-    route5: '/orders',
-    route6: '/orders/:id',
-    route8: '/posts',
-    route7: '/posts/:id',
+    user: '/users',
+    user1: '/users/:1',
+    products: '/products',
+    products1: '/products/1',
+    orders: '/orders',
+    posts: '/posts',
+    notes: '/notes',
+    logs: '/logs',
   };
 
   let htmlResponse =

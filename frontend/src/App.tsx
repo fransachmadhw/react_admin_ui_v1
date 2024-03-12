@@ -22,6 +22,7 @@ import ToasterProvider from './components/ToasterProvider';
 import EditProfile from './pages/EditProfile';
 import User from './pages/User';
 import Product from './pages/Product';
+import Login from './pages/Login';
 
 function App() {
   const [theme, setTheme] = React.useState('light');
@@ -119,6 +120,16 @@ function App() {
         },
       ],
       errorElement: <Error />,
+    },
+    {
+      path: '/login',
+      element: (
+        <Login
+          theme={theme}
+          setTheme={setTheme}
+          toggleTheme={toggleTheme}
+        />
+      ),
     },
   ]);
 

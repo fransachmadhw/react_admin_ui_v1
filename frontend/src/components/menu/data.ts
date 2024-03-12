@@ -1,4 +1,4 @@
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import {
   HiOutlineHome,
   HiOutlineUser,
@@ -105,13 +105,8 @@ export const menu = [
       //   label: 'settings',
       // },
       {
-        isLink: false,
-        onClick: () => {
-          toast('Gaboleh Keluar!', {
-            icon: '😠',
-            id: 'toastSidebar',
-          });
-        },
+        isLink: true,
+        url: '/login',
         icon: HiOutlineArrowLeftOnRectangle,
         label: 'log out',
       },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HiBars3CenterLeft } from 'react-icons/hi2';
 import { DiReact } from 'react-icons/di';
 import { HiSearch, HiOutlineBell } from 'react-icons/hi';
@@ -29,6 +29,8 @@ const Navbar: React.FC<NavbarProps> = ({
   const toggleFullScreen = () => {
     setIsFullScreen((prev) => !prev);
   };
+
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     if (isFullScreen) {
@@ -167,13 +169,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 <a className="justify-between">My Profile</a>
               </li>
             </Link>
-            <li
-              onClick={() =>
-                toast('Gaboleh Keluar!', {
-                  icon: '😠',
-                })
-              }
-            >
+            <li onClick={() => navigate('/login')}>
               <a>Log Out</a>
             </li>
           </ul>

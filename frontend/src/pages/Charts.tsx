@@ -169,8 +169,8 @@ const Charts = () => {
           Charts
         </h2>
         {/* grid */}
-        <div className="w-full grid xl:grid-cols-2 gap-5">
-          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px] xl:min-h-[320px]">
+        <div className="w-full grid sm:grid-cols-2 gap-5">
+          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px] xl:min-h-[320px] 3xl:min-h-[460px]">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart width={300} height={100} data={dataLine}>
                 <Line
@@ -182,7 +182,7 @@ const Charts = () => {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px]">
+          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px] xl:min-h-[320px] 3xl:min-h-[460px]">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -203,7 +203,7 @@ const Charts = () => {
               </PieChart>
             </ResponsiveContainer>
           </div>
-          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px] xl:min-h-[320px]">
+          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px] xl:min-h-[320px] 3xl:min-h-[460px]">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={dataArea}>
                 {/* <CartesianGrid strokeDasharray="3 3" /> */}
@@ -234,7 +234,7 @@ const Charts = () => {
               </AreaChart>
             </ResponsiveContainer>
           </div>
-          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px] xl:min-h-[320px]">
+          <div className="bg-neutral-50 dark:bg-neutral p-5 rounded-2xl w-full min-h-[256px] xl:min-h-[320px] 3xl:min-h-[460px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={dataBar}>
                 <Bar dataKey="uv" fill="#8884d8" />

@@ -1,15 +1,16 @@
 import React from 'react';
 
-const ChangeThemes = () => {
-  const [theme, setTheme] = React.useState('light');
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+interface TogglerProps {
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
+  toggleTheme: () => void;
+}
 
-  React.useEffect(() => {
-    document.querySelector('html')?.setAttribute('data-theme', theme);
-  }, [theme]);
-
+const ChangeThemes: React.FC<TogglerProps> = ({
+  // theme,
+  // setTheme,
+  toggleTheme,
+}) => {
   return (
     <div className="w-full">
       <label className="swap swap-rotate">
@@ -20,7 +21,7 @@ const ChangeThemes = () => {
           className="theme-controller"
         />
         <svg
-          className="swap-off fill-current w-6 h-6 xl:w-5 xl:h-5"
+          className="swap-off fill-current w-6 h-6 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 3xl:w-[30px] 3xl:h-[30px]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -28,7 +29,7 @@ const ChangeThemes = () => {
         </svg>
 
         <svg
-          className="swap-on fill-current w-6 h-6 xl:w-5 xl:h-5"
+          className="swap-on fill-current w-6 h-6 xl:w-5 xl:h-5 2xl:w-6 2xl:h-6 3xl:w-[30px] 3xl:h-[30px]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

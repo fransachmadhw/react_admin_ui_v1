@@ -27,7 +27,7 @@ const Posts = () => {
       renderCell: (params) => {
         return (
           <div className="flex gap-3 relative items-center py-2">
-            <div className="w-10 xl:w-32 xl:h-[72px] rounded relative overflow-hidden">
+            <div className="w-20 h-12 sm:w-24 sm:h-14 xl:w-32 xl:h-[72px] rounded relative overflow-hidden">
               <img
                 src={
                   params.row.thumbnail ||

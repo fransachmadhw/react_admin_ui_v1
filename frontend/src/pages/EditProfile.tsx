@@ -111,7 +111,7 @@ const EditProfile = () => {
           {/* grid */}
           <div className="w-full grid xl:grid-cols-3 gap-3 xl:gap-5 2xl:gap-20 xl:text-base">
             {/* column 1 */}
-            <div className="w-full flex flex-col gap-3 xl:gap-5">
+            <div className="w-full flex flex-col sm:grid sm:grid-cols-3 xl:flex xl:flex-col gap-3 xl:gap-5">
               {/* row 1 */}
               <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
@@ -163,7 +163,7 @@ const EditProfile = () => {
               </div>
             </div>
             {/* column 2 */}
-            <div className="w-full flex flex-col gap-3 xl:gap-5">
+            <div className="w-full flex flex-col sm:grid sm:grid-cols-2 xl:flex xl:flex-col gap-3 xl:gap-5">
               {/* row 1 */}
               <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
@@ -195,8 +195,8 @@ const EditProfile = () => {
                 />
               </div>
               {/* row 3 */}
-              <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
-                <div className="w-full whitespace-nowrap">
+              <div className="w-full grid sm:col-span-full xl:grid-cols-3 2xl:grid-cols-4 xl:items-start gap-1 xl:gap-0">
+                <div className="w-full whitespace-nowrap xl:mt-3">
                   <span className="whitespace-nowrap">Address</span>
                 </div>
                 <textarea
@@ -219,7 +219,7 @@ const EditProfile = () => {
               </div>
             </div>
             {/* column 3 */}
-            <div className="w-full flex flex-col gap-3 xl:gap-5">
+            <div className="w-full flex flex-col sm:grid sm:grid-cols-3 xl:flex xl:flex-col gap-3 xl:gap-5">
               {/* row 1 */}
               <div className="w-full grid xl:grid-cols-3 2xl:grid-cols-4 items-center gap-1 xl:gap-0">
                 <div className="w-full whitespace-nowrap">
@@ -248,7 +248,7 @@ const EditProfile = () => {
             </span>
           </div>
           {/* services block */}
-          <div className="grid grid-cols-3 xl:flex gap-5">
+          <div className="grid grid-cols-3 sm:grid-cols-6 xl:grid-cols-3 xl:flex gap-5">
             {/* column 1 */}
             <div className="col-span-2 flex flex-col items-start gap-5 xl:w-[240px]">
               <button

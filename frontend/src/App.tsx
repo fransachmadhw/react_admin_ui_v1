@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,17 +24,30 @@ import User from './pages/User';
 import Product from './pages/Product';
 
 function App() {
+  const [theme, setTheme] = React.useState('light');
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+  React.useEffect(() => {
+    document.querySelector('html')?.setAttribute('data-theme', theme);
+  }, [theme]);
+
   const Layout = () => {
     return (
       <div
         id="rootContainer"
-        className="w-full p-0 m-0 overflow-visible 2xl:min-h-screen 2xl:flex flex-col justify-between"
+        className="w-full p-0 m-0 overflow-visible min-h-screen flex flex-col justify-between"
       >
         <ToasterProvider />
         <div>
-          <Navbar />
+          <Navbar
+            theme={theme}
+            setTheme={setTheme}
+            toggleTheme={toggleTheme}
+          />
           <div className="w-full flex gap-0 pt-20 xl:pt-[96px] 2xl:pt-[112px] mb-auto">
-            <div className="hidden xl:block xl:w-[250px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:px-4 xl:py-1">
+            <div className="hidden xl:block xl:w-[250px] 2xl:w-[280px] 3xl:w-[350px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:px-4 xl:py-1">
               <Menu />
             </div>
             <div className="w-full px-4 xl:px-4 2xl:px-5 xl:py-2 overflow-clip">

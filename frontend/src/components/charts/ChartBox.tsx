@@ -88,13 +88,13 @@ const ChartBox: React.FC<ChartBoxProps> = ({
           <div className="flex h-full flex-col justify-between items-start">
             <div className="flex items-center gap-2">
               {IconBox && (
-                <IconBox className="m-0 p-0 text-[24px] xl:text-[30px] 2xl:text-[42px] leading-none" />
+                <IconBox className="m-0 p-0 text-[24px] xl:text-[30px] 2xl:text-[42px] 3xl:text-[48px] leading-none" />
               )}
-              <span className="w-[88px] xl:w-[60px] 2xl:w-[82px] m-0 p-0 text-[16px] xl:text-[15px] 2xl:text-[20px] leading-[1.15] 2xl:leading-tight font-semibold">
+              <span className="w-[88px] xl:w-[60px] 2xl:w-[82px] 3xl:w-[140px] m-0 p-0 text-[16px] xl:text-[15px] 2xl:text-[20px] 3xl:text-[24px] leading-[1.15] 2xl:leading-tight font-semibold">
                 {title}
               </span>
             </div>
-            <span className="font-bold text-xl xl:text-2xl 2xl:text-3xl m-0 p-0">
+            <span className="font-bold text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl m-0 p-0">
               {number}
             </span>
             <button
@@ -170,11 +170,11 @@ const ChartBox: React.FC<ChartBoxProps> = ({
 
     if (isSuccess) {
       return (
-        <div className="w-full h-full p-0 m-0 flex flex-col items-start gap-3 xl:gap-4">
+        <div className="w-full h-full p-0 m-0 flex flex-col items-start 3xl:justify-between gap-3 xl:gap-4">
           <span className="text-2xl xl:text-2xl 2xl:text-4xl font-bold">
             {title || 'No title'}
           </span>
-          <div className="w-full min-h-40 xl:min-h-[150px]">
+          <div className="w-full min-h-40 xl:min-h-[150px] 2xl:min-h-[180px] 3xl:min-h-[250px]">
             {chartData ? (
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData}>
@@ -226,7 +226,7 @@ const ChartBox: React.FC<ChartBoxProps> = ({
           <span className="text-2xl xl:text-2xl 2xl:text-4xl font-bold">
             {title || 'no title'}
           </span>
-          <div className="w-full min-h-[300px]">
+          <div className="w-full min-h-[300px] 2xl:min-h-[360px] 3xl:min-h-[420px]">
             {chartPieData ? (
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -295,7 +295,7 @@ const ChartBox: React.FC<ChartBoxProps> = ({
           <span className="text-2xl xl:text-2xl 2xl:text-4xl font-bold">
             {title || 'no title'}
           </span>
-          <div className="w-full min-h-[300px]">
+          <div className="w-full min-h-[300px] 2xl:min-h-[360px] 3xl:min-h-[420px]">
             {chartAreaData ? (
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={chartAreaData}>

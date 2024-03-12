@@ -6,6 +6,9 @@ export default {
       animation: {
         'spin-slow': 'spin 7s linear infinite',
       },
+      screens: {
+        '3xl': '2200px',
+      },
     },
   },
   plugins: [require('daisyui')],

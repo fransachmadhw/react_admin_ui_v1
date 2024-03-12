@@ -51,20 +51,20 @@ const TopDealsBox = () => {
             >
               <div className="flex gap-3 2xl:gap-4 items-center">
                 <div className="avatar">
-                  <div className="w-11 xl:w-8 2xl:w-16 rounded-full">
+                  <div className="w-11 xl:w-8 2xl:w-16 3xl:w-20 rounded-full">
                     <img src={user.img} alt={`user${index}`} />
                   </div>
                 </div>
                 <div className="flex flex-col items-start gap-1">
-                  <span className="text-sm xl:text-[13px] 2xl:text-lg m-0 p-0">
+                  <span className="text-sm xl:text-[13px] 2xl:text-lg 3xl:text-xl m-0 p-0">
                     {user.username}
                   </span>
-                  <span className="text-xs xl:text-[10px] 2xl:text-sm">
+                  <span className="text-xs xl:text-[10px] 2xl:text-sm 3xl:text-base">
                     {user.email}
                   </span>
                 </div>
               </div>
-              <span className="font-semibold text-lg xl:text-base 2xl:text-lg">
+              <span className="font-semibold text-lg xl:text-base 2xl:text-lg 3xl:text-xl">
                 $3.688
               </span>
             </button>

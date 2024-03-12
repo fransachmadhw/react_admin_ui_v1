@@ -143,7 +143,7 @@ const Notes = () => {
               </div>
             ) : (
               <div className="sticky xl:top-[90px] xl:h-[80vh] z-10 flex flex-col items-start gap-5 xl:pr-10 xl:pb-10 overflow-y-auto">
-                <div className="relative w-full xl:h-[360px] flex justify-center">
+                <div className="relative w-full xl:h-[360px] 2xl:h-[500px] 3xl:h-[660px] flex justify-center">
                   {topicSelected == 'e-commerce' && (
                     <img
                       src="/e-commerce-vector.png"
@@ -236,7 +236,7 @@ const Notes = () => {
             >
               <HiOutlineXMark />
             </button>
-            <div className="relative w-full h-[256px] flex justify-center">
+            <div className="relative w-full h-[256px] sm:h-[480px] xl:h-[256px] flex justify-center">
               {topicSelected == 'e-commerce' && (
                 <img
                   src="/e-commerce-vector.png"

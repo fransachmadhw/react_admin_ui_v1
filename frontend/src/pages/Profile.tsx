@@ -117,7 +117,7 @@ const Profile = () => {
             </span>
           </div>
           {/* services block */}
-          <div className="grid grid-cols-3 xl:flex gap-5">
+          <div className="grid grid-cols-3 sm:grid-cols-6 xl:grid-cols-3 xl:flex gap-5">
             {/* column 1 */}
             <div className="col-span-2 flex flex-col items-start gap-5 xl:w-[240px]">
               <button

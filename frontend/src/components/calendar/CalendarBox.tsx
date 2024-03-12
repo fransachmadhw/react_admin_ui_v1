@@ -102,7 +102,7 @@ const CalendarBox: React.FC = () => {
         <div className="hidden xl:flex w-full flex-col items-start gap-3">
           {currentEvents.map(renderSidebarEvent)}
         </div>
-        <div className="carousel w-full xl:hidden rounded-box gap-3">
+        <div className="carousel w-full xl:hidden rounded-lg gap-3">
           {currentEvents.map((event) => (
             <div
               className="carousel-item flex-col items-start gap-3 p-3 bg-base-200 dark:bg-neutral dark:text-neutral-content rounded-lg"
@@ -134,7 +134,7 @@ const CalendarBox: React.FC = () => {
       </div>
 
       {/* calendar */}
-      <div className="grow h-[85vh] xl:h-auto">
+      <div className="grow h-[85vh] xl:h-auto 3xl:h-[80vh]">
         <FullCalendar
           height="100%"
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}

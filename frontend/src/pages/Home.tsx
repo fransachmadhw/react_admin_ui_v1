@@ -61,12 +61,14 @@ const Home = () => {
   });
 
   return (
+    // screen
     <div className="home w-full p-0 m-0">
-      <div className="w-full grid grid-cols-1 xl:grid-cols-4 grid-flow-dense auto-rows-[minmax(200px,auto)] xl:auto-rows-[minmax(150px,auto)] gap-3 xl:gap-3 px-0">
-        <div className="box col-span-full xl:col-span-1 row-span-3">
+      {/* grid */}
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 grid-flow-dense auto-rows-[minmax(200px,auto)] xl:auto-rows-[minmax(150px,auto)] gap-3 xl:gap-3 px-0">
+        <div className="box col-span-full sm:col-span-1 xl:col-span-1 row-span-3 3xl:row-span-5">
           <TopDealsBox />
         </div>
-        <div className="box col-span-full xl:col-span-1">
+        <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
             chartType={'line'}
             IconBox={MdGroup}
@@ -76,7 +78,7 @@ const Home = () => {
             isSuccess={queryGetTotalUsers.isSuccess}
           />
         </div>
-        <div className="box col-span-full xl:col-span-1">
+        <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
             chartType={'line'}
             IconBox={MdInventory2}
@@ -86,7 +88,7 @@ const Home = () => {
             isSuccess={queryGetTotalProducts.isSuccess}
           />
         </div>
-        <div className="box row-span-3 col-span-full xl:col-span-1">
+        <div className="box row-span-3 col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-5">
           <ChartBox
             chartType={'pie'}
             title="Leads by Source"
@@ -95,7 +97,7 @@ const Home = () => {
             isSuccess={queryGetTotalSource.isSuccess}
           />
         </div>
-        <div className="box col-span-full xl:col-span-1">
+        <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
             chartType={'line'}
             IconBox={MdAssessment}
@@ -105,7 +107,7 @@ const Home = () => {
             isSuccess={queryGetTotalRatio.isSuccess}
           />
         </div>
-        <div className="box col-span-full xl:col-span-1">
+        <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
             chartType={'line'}
             IconBox={MdSwapHorizontalCircle}
@@ -115,7 +117,7 @@ const Home = () => {
             isSuccess={queryGetTotalRevenue.isSuccess}
           />
         </div>
-        <div className="box row-span-2 col-span-full xl:col-span-2">
+        <div className="box row-span-2 col-span-full xl:col-span-2 3xl:row-span-3">
           <ChartBox
             chartType={'area'}
             title="Revenue by Products"
@@ -124,7 +126,7 @@ const Home = () => {
             isSuccess={queryGetTotalRevenueByProducts.isSuccess}
           />
         </div>
-        <div className="box col-span-full xl:col-span-1">
+        <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
             chartType={'bar'}
             title="Total Visit"
@@ -133,7 +135,7 @@ const Home = () => {
             isSuccess={queryGetTotalVisit.isSuccess}
           />
         </div>
-        <div className="box col-span-full xl:col-span-1">
+        <div className="box col-span-full sm:col-span-1 xl:col-span-1 3xl:row-span-2">
           <ChartBox
             chartType={'bar'}
             title="Total Profit"

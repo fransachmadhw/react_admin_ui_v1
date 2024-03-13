@@ -51,7 +51,7 @@ const Login: React.FC<LoginProps> = ({
               </svg>
               <input
                 type="text"
-                className="grow max-w-full"
+                className="grow input outline-none focus:outline-none border-none border-[0px] h-auto pl-1 pr-0"
                 placeholder="Email"
               />
             </label>
@@ -70,7 +70,7 @@ const Login: React.FC<LoginProps> = ({
               </svg>
               <input
                 type="password"
-                className="grow"
+                className="grow input outline-none focus:outline-none border-none border-[0px] h-auto pl-1 pr-0"
                 placeholder="Password"
               />
             </label>
@@ -101,7 +101,7 @@ const Login: React.FC<LoginProps> = ({
               Log In
             </div>
             <div className="divider text-sm">OR</div>
-            <div className="w-full flex justify-center items-center gap-3">
+            <div className="w-full flex justify-center items-center gap-4">
               <button className="btn btn-circle dark:btn-neutral">
                 <img
                   className="w-6"

@@ -7,34 +7,15 @@
 
 <br/>
 <p align="center">
-    <a href="LICENSE" target="_blank">
-        <img src="https://img.shields.io/github/license/fransachmadhw/react_admin_ui_v1
-" alt="GitHub license">
-    </a>
-    <a href="#" target="_blank">
-        <img src="https://img.shields.io/badge/version-1.0.0-blue
-" alt="version">
-    </a>
-    <a href="#" target="_blank">
-        <img src="https://img.shields.io/github/stars/fransachmadhw/react_admin_ui_v1
-" alt="GitHub stars">
-    </a>
-    <a href="#" target="_blank">
-        <img src="https://img.shields.io/github/languages/top/fransachmadhw/react_admin_ui_v1
-" alt="language">
-    </a>
-    <a href="#" target="_blank">
-        <img src="https://img.shields.io/github/last-commit/fransachmadhw/react_admin_ui_v1
-" alt="GitHub commit activity">
-    </a>
-    <a href="#" target="_blank">
-        <img src="https://img.shields.io/github/forks/fransachmadhw/react_admin_ui_v1
-" alt="forks">
-    </a>
+    <a href="LICENSE" target="_blank"><img src="https://img.shields.io/github/license/fransachmadhw/react_admin_ui_v1" alt="GitHub license"></a>
+    <a><img src="https://img.shields.io/badge/version-1.0.0-blue" alt="version"></a>
+    <a><img src="https://img.shields.io/github/stars/fransachmadhw/react_admin_ui_v1" alt="GitHub stars"></a>
+    <a><img src="https://img.shields.io/github/languages/top/fransachmadhw/react_admin_ui_v1" alt="language"></a>
+    <a><img src="https://img.shields.io/github/forks/fransachmadhw/react_admin_ui_v1" alt="forks"></a>
 </p>
 <br/>
 
-[React Admin UI](https://react-admin-ui-v1.vercel.app/) is a beautiful and open-source **Dashboard User Interface Prototype** built with TypeScript and React based. Surprisingly, this is my first time building a User Interface prototype with a bit complex components. IT agencies or even individual developers could use this prototype to brings insight for their future projects.
+[React Admin UI](https://react-admin-ui-v1.vercel.app/) is a beautiful and open-source **Dashboard User Interface Prototype** built with TypeScript and React based. Surprisingly, this is my first time building a User Interface prototype with a bit complex components. So, my goal is IT agencies or even individual developers could use this prototype to brings insight for their future projects.
 
 Have a look at the preview of [React Admin UI](https://react-admin-ui-v1.vercel.app/) for a comprehensive list of prototype's features, core values and use cases.
 

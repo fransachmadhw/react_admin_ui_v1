@@ -1,19 +1,9 @@
-import React from 'react';
+// import React from 'react';
 import ChangeThemes from '../components/ChangesThemes';
 import { DiReact } from 'react-icons/di';
 import { useNavigate } from 'react-router-dom';
 
-interface LoginProps {
-  theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
-  toggleTheme: () => void;
-}
-
-const Login: React.FC<LoginProps> = ({
-  theme,
-  setTheme,
-  toggleTheme,
-}) => {
+const Login = () => {
   const navigate = useNavigate();
   return (
     // screen
@@ -22,11 +12,7 @@ const Login: React.FC<LoginProps> = ({
       <div className="w-full min-h-screen flex justify-center items-center bg-base-200 relative">
         {/* theme */}
         <div className="absolute top-5 right-5 z-[99]">
-          <ChangeThemes
-            theme={theme}
-            setTheme={setTheme}
-            toggleTheme={toggleTheme}
-          />
+          <ChangeThemes />
         </div>
         <div className="w-full h-screen xl:h-auto xl:w-[30%] 2xl:w-[25%] 3xl:w-[20%] bg-base-100 rounded-lg shadow-md flex flex-col items-center p-5 pb-7 gap-8 pt-20 xl:pt-7">
           <div className="flex items-center gap-1 xl:gap-2">

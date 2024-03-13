@@ -9,17 +9,7 @@ import toast from 'react-hot-toast';
 import { menu } from './menu/data';
 import MenuItem from './menu/MenuItem';
 
-interface NavbarProps {
-  theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
-  toggleTheme: () => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({
-  theme,
-  setTheme,
-  toggleTheme,
-}) => {
+const Navbar = () => {
   const [isFullScreen, setIsFullScreen] = React.useState(true);
   const element = document.getElementById('root');
 
@@ -139,11 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
         {/* theme */}
         <div className="px-0 xl:px-auto btn btn-circle btn-ghost xl:mr-1">
-          <ChangeThemes
-            theme={theme}
-            setTheme={setTheme}
-            toggleTheme={toggleTheme}
-          />
+          <ChangeThemes />
         </div>
 
         {/* avatar dropdown */}

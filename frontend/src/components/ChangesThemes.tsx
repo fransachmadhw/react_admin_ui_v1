@@ -1,16 +1,9 @@
-import React from 'react';
+// import React from 'react';
+import useTheme from '../contexts/useTheme';
 
-interface TogglerProps {
-  theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
-  toggleTheme: () => void;
-}
+const ChangeThemes = () => {
+  const { toggleTheme } = useTheme();
 
-const ChangeThemes: React.FC<TogglerProps> = ({
-  // theme,
-  // setTheme,
-  toggleTheme,
-}) => {
   return (
     <div className="w-full">
       <label className="swap swap-rotate">

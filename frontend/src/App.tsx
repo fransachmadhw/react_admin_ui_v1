@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -25,15 +25,6 @@ import Product from './pages/Product';
 import Login from './pages/Login';
 
 function App() {
-  const [theme, setTheme] = React.useState('light');
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
-  React.useEffect(() => {
-    document.querySelector('html')?.setAttribute('data-theme', theme);
-  }, [theme]);
-
   const Layout = () => {
     return (
       <div
@@ -42,11 +33,7 @@ function App() {
       >
         <ToasterProvider />
         <div>
-          <Navbar
-            theme={theme}
-            setTheme={setTheme}
-            toggleTheme={toggleTheme}
-          />
+          <Navbar />
           <div className="w-full flex gap-0 pt-20 xl:pt-[96px] 2xl:pt-[112px] mb-auto">
             <div className="hidden xl:block xl:w-[250px] 2xl:w-[280px] 3xl:w-[350px] border-r-2 border-base-300 dark:border-slate-700 px-3 xl:px-4 xl:py-1">
               <Menu />
@@ -123,13 +110,7 @@ function App() {
     },
     {
       path: '/login',
-      element: (
-        <Login
-          theme={theme}
-          setTheme={setTheme}
-          toggleTheme={toggleTheme}
-        />
-      ),
+      element: <Login />,
     },
   ]);
 

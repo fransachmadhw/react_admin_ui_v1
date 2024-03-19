@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
+  ScrollRestoration,
 } from 'react-router-dom';
 import Home from './pages/Home';
 import Users from './pages/Users';
@@ -32,6 +33,7 @@ function App() {
         className="w-full p-0 m-0 overflow-visible min-h-screen flex flex-col justify-between"
       >
         <ToasterProvider />
+        <ScrollRestoration />
         <div>
           <Navbar />
           <div className="w-full flex gap-0 pt-20 xl:pt-[96px] 2xl:pt-[112px] mb-auto">
